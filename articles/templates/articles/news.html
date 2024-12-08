@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="{% static 'articles/news.css' %}">
+
+</head>
+<body>
+    <div id="app">
+        <div id="news-container">
+            {% for article in news_articles %}
+                <div class="news-card">
+                    <img src={{article.image}} alt={{article.title}}>
+                    <h2>{{article.title}}</h2>
+                    <p>{{article.description}}</p>
+                    <a href={{article.url}} target="_blank">Read More</a>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- <button id="prev-btn">Previous</button> -->
+        <!-- <button id="next-btn">Next</button> -->
+    </div>
+</body>
+</html>
